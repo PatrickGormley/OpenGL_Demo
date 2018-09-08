@@ -85,7 +85,7 @@ int main(void)
 
 		shader.SetUniform4f("u_Color", 0.6f, 0.3f, 0.8f, 1.0f);
 
-		Texture texture("res/textures/tile.png");
+		Texture texture("res/textures/checker.png");
 		texture.Bind();
 		shader.SetUniform1i("u_Texture", 0);
 
