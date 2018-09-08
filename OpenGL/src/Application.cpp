@@ -15,6 +15,9 @@
 #include "IndexBuffer.h"
 #include "VertexArray.h"
 
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+
 int main(void)
 {
 	GLFWwindow* window;
@@ -80,10 +83,13 @@ int main(void)
 
 		IndexBuffer ib(indices, 6);
 
+		glm::mat4 projMatrix = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f);
+
 		Shader shader("res/shaders/Basic.shader");
 		shader.Bind();
 
 		shader.SetUniform4f("u_Color", 0.6f, 0.3f, 0.8f, 1.0f);
+		shader.SetUniformMat4f("u_MVP", projMatrix);
 
 		Texture texture("res/textures/checker.png");
 		texture.Bind();
