@@ -65,3 +65,5 @@ ipch/
 *.cachefile
 *.VC.db
 *.VC.VC.opendb
+OpenGL/OpenGL.vcxproj
+OpenGL/OpenGL.vcxproj.filters
